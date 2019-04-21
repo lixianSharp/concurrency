@@ -1,5 +1,6 @@
 package com.mmall.concurrency.example.atomic;
 
+import com.mmall.concurrency.LoggerUtil;
 import com.mmall.concurrency.annoations.ThreadSage;
 import lombok.extern.slf4j.Slf4j;
 
@@ -37,7 +38,7 @@ public class AtomicExample3 {
                     add();
                     semaphore.release();
                 } catch (Exception e) {
-                    //log.error("exception",e);
+                    LoggerUtil.logger.error("exception",e);
                 }
                 countDownLatch.countDown();
             });
@@ -45,13 +46,11 @@ public class AtomicExample3 {
         countDownLatch.await();
         //关闭线程池
         executorService.shutdown();
-        System.out.println("count:{}" + count);
-        // log.info("count:{}",count);
+        LoggerUtil.logger.info("count:{}",count);
     }
 
-    //这个方法是线程不安全的写法
+
     private static void add() {
         count.increment();
-
     }
 }

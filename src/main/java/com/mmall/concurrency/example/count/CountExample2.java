@@ -3,6 +3,8 @@ package com.mmall.concurrency.example.count;
 import com.mmall.concurrency.annoations.NotThreadSage;
 import com.mmall.concurrency.annoations.ThreadSage;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -20,7 +22,11 @@ public class CountExample2 {
     //同时并发执行的线程数
     public static int threadTotal = 200;
 
+    //这里使用了AtomicInteger  Atomicxxx：原子的
     public static AtomicInteger count = new AtomicInteger(0);
+
+    //日志记录器（这是SpringBoot自带的日志记录器）
+    private static Logger logger = LoggerFactory.getLogger(CountExample2.class);
 
     public static void main(String[] args) throws Exception {
 
@@ -36,7 +42,7 @@ public class CountExample2 {
                     add();
                     semaphore.release();
                 } catch (Exception e) {
-                    //log.error("exception",e);
+                    logger.error("exception",e);
                 }
                 countDownLatch.countDown();
             });
@@ -44,8 +50,7 @@ public class CountExample2 {
         countDownLatch.await();
         //关闭线程池
         executorService.shutdown();
-        System.out.println("count:{}" + count);
-        // log.info("count:{}",count);
+        logger.info("count:{}",count);//5000
     }
 
     //这个方法是线程不安全的写法

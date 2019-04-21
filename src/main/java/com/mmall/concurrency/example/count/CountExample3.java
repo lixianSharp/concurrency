@@ -1,6 +1,6 @@
 package com.mmall.concurrency.example.count;
 
-import com.mmall.concurrency.annoations.NotThreadSage;
+import com.mmall.concurrency.annoations.ThreadSage;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,11 +9,11 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Slf4j
-@NotThreadSage
-public class CountExample1 {
-
+@ThreadSage
+public class CountExample3 {
     //请求总数
     public static int clientTotal = 5000;
 
@@ -48,11 +48,11 @@ public class CountExample1 {
         countDownLatch.await();
         //关闭线程池
         executorService.shutdown();
-        logger.info("count:{}",count);//打印出来的count的值是不确定的，是随机的
+        logger.info("count:{}",count);
     }
 
     //这个方法是线程不安全的写法
-    private static void add() {
+    private synchronized static void add() {
         count++;
     }
 }

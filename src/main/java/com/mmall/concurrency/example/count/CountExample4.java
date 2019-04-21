@@ -12,7 +12,7 @@ import java.util.concurrent.Semaphore;
 
 @Slf4j
 @NotThreadSage
-public class CountExample1 {
+public class CountExample4 {
 
     //请求总数
     public static int clientTotal = 5000;
@@ -20,10 +20,11 @@ public class CountExample1 {
     //同时并发执行的线程数
     public static int threadTotal = 200;
 
-    public static int count = 0;
+    //volatile不具有原子性
+    public static volatile int count = 0;
 
     //日志记录器（这是SpringBoot自带的日志记录器）
-    private static Logger logger = LoggerFactory.getLogger(CountExample1.class);
+    private static Logger logger = LoggerFactory.getLogger(CountExample4.class);
 
     public static void main(String[] args) throws Exception {
 
@@ -54,5 +55,8 @@ public class CountExample1 {
     //这个方法是线程不安全的写法
     private static void add() {
         count++;
+        //1、count  从主存中读取count的值
+        //2、 +1  将count的值+1
+        //3、 将count重新写入主存
     }
 }
