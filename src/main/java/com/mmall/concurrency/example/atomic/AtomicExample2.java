@@ -1,18 +1,17 @@
 package com.mmall.concurrency.example.atomic;
 
 import com.mmall.concurrency.LoggerUtil;
-import com.mmall.concurrency.annoations.ThreadSage;
+import com.mmall.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Slf4j
-@ThreadSage
+@ThreadSafe
 public class AtomicExample2 {
 
     //请求总数
@@ -29,6 +28,7 @@ public class AtomicExample2 {
         ExecutorService executorService = Executors.newCachedThreadPool();
         //信号量
         final Semaphore semaphore = new Semaphore(threadTotal);
+        //闭锁
         final CountDownLatch countDownLatch = new CountDownLatch(clientTotal);
         for (int i = 0; i < clientTotal; i++) {
             executorService.execute(() -> {

@@ -1,18 +1,17 @@
 package com.mmall.concurrency.example.atomic;
 
 import com.mmall.concurrency.LoggerUtil;
-import com.mmall.concurrency.annoations.ThreadSage;
+import com.mmall.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAdder;
 
 @Slf4j
-@ThreadSage
+@ThreadSafe
 public class AtomicExample3 {
 
     //请求总数

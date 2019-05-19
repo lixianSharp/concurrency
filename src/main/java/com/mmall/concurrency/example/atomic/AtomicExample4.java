@@ -1,15 +1,14 @@
 package com.mmall.concurrency.example.atomic;
 
 import com.mmall.concurrency.LoggerUtil;
-import com.mmall.concurrency.annoations.ThreadSage;
+import com.mmall.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
 
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.logging.Logger;
 
 @Slf4j
-@ThreadSage
+@ThreadSafe
 public class AtomicExample4 {
     //AtomicReference的使用
     private static AtomicReference<Integer> count = new AtomicReference<>(0);

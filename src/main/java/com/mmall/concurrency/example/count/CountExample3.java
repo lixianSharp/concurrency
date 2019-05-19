@@ -1,6 +1,6 @@
 package com.mmall.concurrency.example.count;
 
-import com.mmall.concurrency.annoations.ThreadSage;
+import com.mmall.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,10 +9,9 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Slf4j
-@ThreadSage
+@ThreadSafe
 public class CountExample3 {
     //请求总数
     public static int clientTotal = 5000;

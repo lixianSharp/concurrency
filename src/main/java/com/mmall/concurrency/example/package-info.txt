@@ -1,0 +1,4 @@
+
+singleton：单例
+syncContainer：同步容器
+current:并发容器

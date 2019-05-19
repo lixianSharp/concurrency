@@ -1,6 +1,5 @@
 package com.mmall.concurrency;
 
-import com.mmall.concurrency.example.count.CountExample1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

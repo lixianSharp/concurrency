@@ -1,6 +1,6 @@
 package com.mmall.concurrency.example.count;
 
-import com.mmall.concurrency.annoations.NotThreadSage;
+import com.mmall.concurrency.annoations.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
 @Slf4j
-@NotThreadSage
+@NotThreadSafe
 public class CountExample1 {
 
     //请求总数
