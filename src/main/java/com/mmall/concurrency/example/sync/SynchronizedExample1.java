@@ -2,16 +2,16 @@ package com.mmall.concurrency.example.sync;
 
 import com.mmall.concurrency.LoggerUtil;
 import lombok.extern.slf4j.Slf4j;
-import sun.rmi.runtime.Log;
+
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.logging.Logger;
+
 
 @Slf4j
 public class SynchronizedExample1 {
 
-    //修改一个代码块
+    //修饰一个代码块
     public void test1(int j){
         synchronized (this){
             for(int i=0;i<10;i++){
