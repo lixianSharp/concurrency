@@ -11,7 +11,7 @@ public class ThreadPoolExample2 {
 
     public static void main(String[] args) {
 
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        ExecutorService executorService = Executors.newFixedThreadPool(3);//指定线程池中的线程数量
 
         for (int i = 0; i < 10; i++) {
             final int index = i;

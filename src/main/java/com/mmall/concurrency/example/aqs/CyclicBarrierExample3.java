@@ -41,4 +41,30 @@ public class CyclicBarrierExample3 {
         barrier.await();
         LoggerUtil.logger.info("{} continue",threadNum);
     }
+
+    /**
+     * 打印结果：
+     * 23:53:59.051 [pool-1-thread-1] INFO java.lang.Object - 0 is ready
+     * 23:53:59.932 [pool-1-thread-2] INFO java.lang.Object - 1 is ready
+     * 23:54:00.934 [pool-1-thread-3] INFO java.lang.Object - 2 is ready
+     * 23:54:01.934 [pool-1-thread-4] INFO java.lang.Object - 3 is ready
+     * 23:54:02.934 [pool-1-thread-5] INFO java.lang.Object - 4 is ready
+     * 23:54:02.934 [pool-1-thread-5] INFO java.lang.Object - callback is running
+     * 23:54:02.934 [pool-1-thread-5] INFO java.lang.Object - 4 continue
+     * 23:54:02.934 [pool-1-thread-1] INFO java.lang.Object - 0 continue
+     * 23:54:02.934 [pool-1-thread-4] INFO java.lang.Object - 3 continue
+     * 23:54:02.934 [pool-1-thread-2] INFO java.lang.Object - 1 continue
+     * 23:54:02.934 [pool-1-thread-3] INFO java.lang.Object - 2 continue
+     * 23:54:03.935 [pool-1-thread-6] INFO java.lang.Object - 5 is ready
+     * 23:54:04.936 [pool-1-thread-5] INFO java.lang.Object - 6 is ready
+     * 23:54:05.936 [pool-1-thread-3] INFO java.lang.Object - 7 is ready
+     * 23:54:06.937 [pool-1-thread-4] INFO java.lang.Object - 8 is ready
+     * 23:54:07.938 [pool-1-thread-2] INFO java.lang.Object - 9 is ready
+     * 23:54:07.938 [pool-1-thread-2] INFO java.lang.Object - callback is running
+     * 23:54:07.938 [pool-1-thread-6] INFO java.lang.Object - 5 continue
+     * 23:54:07.938 [pool-1-thread-3] INFO java.lang.Object - 7 continue
+     * 23:54:07.938 [pool-1-thread-5] INFO java.lang.Object - 6 continue
+     * 23:54:07.938 [pool-1-thread-2] INFO java.lang.Object - 9 continue
+     * 23:54:07.939 [pool-1-thread-4] INFO java.lang.Object - 8 continue
+     */
 }

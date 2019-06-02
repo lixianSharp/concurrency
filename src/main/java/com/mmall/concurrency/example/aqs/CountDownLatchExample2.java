@@ -20,6 +20,7 @@ public class CountDownLatchExample2 {
         //创建一个线程池
         ExecutorService exec = Executors.newCachedThreadPool();
 
+        //闭锁
         final CountDownLatch countDownLatch = new CountDownLatch(threadCount);
 
         for (int i = 0; i < threadCount; i++) {
@@ -34,7 +35,7 @@ public class CountDownLatchExample2 {
                 }
             });
         }
-        countDownLatch.await(10,TimeUnit.MILLISECONDS);//等待10毫秒，如果超过了10毫秒，就会只想37行之后的代码。
+        countDownLatch.await(10,TimeUnit.MILLISECONDS);//等待10毫秒，如果超过了10毫秒，就会执行39行之后的代码。
         LoggerUtil.logger.info("finish");
         exec.shutdown();//关闭线程池
     }

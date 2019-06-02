@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Vector;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -17,7 +16,7 @@ import java.util.concurrent.Semaphore;
 /**
  * @Aauthor xianyuan_li@qq.com
  * @Date: Create in 9:35 2019/5/5
- * @Description:
+ * @Description: 创建同步的List
  */
 @ThreadSafe
 public class CollectionsExample1 {
@@ -58,19 +57,19 @@ public class CollectionsExample1 {
                 } catch (Exception e) {
                     logger.error("exception", e);
                 }
-                countDownLatch.countDown();
+                countDownLatch.countDown();//让闭锁中的计数器减1
             });
         }
+        //await方法等待计数器的值直到为0为止，才会打开闭锁。
         countDownLatch.await();
         //关闭线程池
         executorService.shutdown();
         logger.info("size:{}",list.size());
     }
 
-    //这个方法是线程不安全的写法
+
     private static void update(int i) {
         list.add(i);
-
     }
 
 

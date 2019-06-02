@@ -57,8 +57,8 @@ public class VectorExample3 {
         vector.add(2);
         vector.add(3);
 
-        test1(vector);
+        //test1(vector);
         //test2(vector);
-       // test3(vector);
+        test3(vector);
     }
 }

@@ -2,7 +2,6 @@ package com.mmall.concurrency.example.aqs;
 
 import com.mmall.concurrency.LoggerUtil;
 
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
@@ -10,7 +9,7 @@ import java.util.concurrent.Semaphore;
 /**
  * @Aauthor xianyuan_li@qq.com
  * @Date: Create in 9:36 2019/5/7
- * @Description:
+ * @Description: Semaphore信号量：常用于仅能提供有限访问的资源。
  */
 public class SemaphoreExample1 {
     private final static int threadCount = 20;

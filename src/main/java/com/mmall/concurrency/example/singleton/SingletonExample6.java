@@ -23,10 +23,6 @@ public class SingletonExample6 {
         instance = new SingletonExample6();
     }
 
-
-
-
-
     //静态的工厂方法
     public static SingletonExample6 getInstance() {
         return instance;

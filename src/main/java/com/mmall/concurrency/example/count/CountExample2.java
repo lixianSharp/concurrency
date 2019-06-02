@@ -52,7 +52,7 @@ public class CountExample2 {
         logger.info("count:{}",count);//5000
     }
 
-    //这个方法是线程不安全的写法
+
     private static void add() {
         count.incrementAndGet();
         //count.getAndIncrement();

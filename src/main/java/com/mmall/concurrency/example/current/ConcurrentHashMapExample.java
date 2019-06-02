@@ -1,19 +1,17 @@
 package com.mmall.concurrency.example.current;
 
 import com.mmall.concurrency.ConcurrencyTest;
-import com.mmall.concurrency.annoations.NotThreadSafe;
 import com.mmall.concurrency.annoations.ThreadSafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.*;
 
 /**
  * @Aauthor xianyuan_li@qq.com
  * @Date: Create in 9:35 2019/5/5
- * @Description:
+ * @Description: 线程安全的HashMap->ConcurrentHashMap
  */
 @ThreadSafe
 public class ConcurrentHashMapExample {
@@ -63,7 +61,7 @@ public class ConcurrentHashMapExample {
         logger.info("size:{}",map.size());
     }
 
-    //这个方法是线程不安全的写法
+
     private static void update(int i) {
         map.put(i, i);
     }

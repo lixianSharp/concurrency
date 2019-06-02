@@ -51,7 +51,7 @@ public class LockExample1 {
         logger.info("count:{}",count);
     }
 
-    //这个方法是线程不安全的写法
+
     private synchronized static void add() {
         count++;
     }

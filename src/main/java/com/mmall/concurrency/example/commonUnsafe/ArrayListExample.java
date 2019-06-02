@@ -2,12 +2,9 @@ package com.mmall.concurrency.example.commonUnsafe;
 
 import com.mmall.concurrency.ConcurrencyTest;
 import com.mmall.concurrency.annoations.NotThreadSafe;
-import com.mmall.concurrency.annoations.ThreadSafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -62,6 +59,7 @@ public class ArrayListExample {
                 countDownLatch.countDown();
             });
         }
+        //wait方法等待计数器达到零，这表示所有需要等待的事件都已经发生
         countDownLatch.await();
         //关闭线程池
         executorService.shutdown();

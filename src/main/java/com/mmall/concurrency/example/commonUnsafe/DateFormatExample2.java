@@ -1,7 +1,6 @@
 package com.mmall.concurrency.example.commonUnsafe;
 
 import com.mmall.concurrency.ConcurrencyTest;
-import com.mmall.concurrency.annoations.NotThreadSafe;
 import com.mmall.concurrency.annoations.ThreadSafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,20 +20,16 @@ import java.util.concurrent.Semaphore;
 @ThreadSafe
 public class DateFormatExample2 {
 
-
-
     //请求总数
     public static int clientTotal = 5000;
 
     //同时并发执行的线程数
     public static int threadTotal = 200;
 
-
     //日志记录器（这是SpringBoot自带的日志记录器）
     private static Logger logger = LoggerFactory.getLogger(ConcurrencyTest.class);
 
     /**
-     *
      * @param args
      * @throws Exception
      */
@@ -55,9 +50,10 @@ public class DateFormatExample2 {
                 } catch (Exception e) {
                     logger.error("exception",e);
                 }
-                countDownLatch.countDown();
+                countDownLatch.countDown();//计数器减1
             });
         }
+        //await方法等待计数器到达零，表示所有需要等待的事件都已经发生，之后才能执行之后的代码。
         countDownLatch.await();
         //关闭线程池
         executorService.shutdown();
@@ -66,7 +62,7 @@ public class DateFormatExample2 {
     //这个方法是线程不安全的写法
     private static void update() {
         try {
-            //SimpleDateFormat是线程不安全的
+            //SimpleDateFormat是线程不安全的，将对象的声明放在方法中，让其成为局部对象。
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
             simpleDateFormat.parse("20190208");
         } catch (ParseException e) {

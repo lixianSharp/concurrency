@@ -34,6 +34,13 @@ public class VectorExample2 {
 
             thread1.start();
             thread2.start();
+
+            /**
+             *  会抛出异常：java.lang.ArrayIndexOutOfBoundsException: Array index out of range
+             *      这是因为：如果线程1将25行执行完之后线程2刚好开始执行31行的时候，就有
+             *          可能发生索引越界异常，导致31行中要取出来的数据被删掉了
+             */
+
         }
     }
 }

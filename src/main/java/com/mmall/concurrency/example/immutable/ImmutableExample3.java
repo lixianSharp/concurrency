@@ -5,12 +5,10 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.mmall.concurrency.annoations.ThreadSafe;
 
-import java.util.List;
-
 /**
  * @Aauthor xianyuan_li@qq.com
  * @Date: Create in 10:23 2019/4/28
- * @Description:
+ * @Description: 不可变对象Guava中的：ImmutableXXX：Collection、List、Set、Map。。。
  */
 @ThreadSafe
 public class ImmutableExample3 {

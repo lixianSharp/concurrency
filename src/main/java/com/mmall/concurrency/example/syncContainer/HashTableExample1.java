@@ -1,12 +1,10 @@
 package com.mmall.concurrency.example.syncContainer;
 
 import com.mmall.concurrency.ConcurrencyTest;
-import com.mmall.concurrency.annoations.NotThreadSafe;
 import com.mmall.concurrency.annoations.ThreadSafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
@@ -17,7 +15,7 @@ import java.util.concurrent.Semaphore;
 /**
  * @Aauthor xianyuan_li@qq.com
  * @Date: Create in 9:35 2019/5/5
- * @Description:
+ * @Description: Hashtable是线程安全的
  */
 @ThreadSafe
 public class HashTableExample1 {

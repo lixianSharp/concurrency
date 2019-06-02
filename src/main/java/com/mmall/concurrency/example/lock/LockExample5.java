@@ -12,6 +12,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.StampedLock;
 
+/**
+ * 锁：StampedLock
+ */
 @Slf4j
 @ThreadSafe
 public class LockExample5 {

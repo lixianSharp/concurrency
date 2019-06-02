@@ -1,12 +1,10 @@
 package com.mmall.concurrency.example.current;
 
 import com.mmall.concurrency.ConcurrencyTest;
-import com.mmall.concurrency.annoations.NotThreadSafe;
 import com.mmall.concurrency.annoations.ThreadSafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
@@ -63,7 +61,7 @@ public class CopyOnWriteArrayListExample {
         logger.info("size:{}",list.size());
     }
 
-    //这个方法是线程不安全的写法
+
     private static void update(int i) {
         list.add(i);
 

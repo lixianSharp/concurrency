@@ -22,7 +22,7 @@ public class SingletonExample7 {
 
     //在类的内部定义一个枚举
     private enum  Singleton{
-        INSTANCE;
+        INSTANCE;//这个代表枚举的一个实例
 
         private SingletonExample7 singleton;
 

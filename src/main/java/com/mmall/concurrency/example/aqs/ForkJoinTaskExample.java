@@ -9,7 +9,7 @@ import java.util.concurrent.RecursiveTask;
 /**
  * @Aauthor xianyuan_li@qq.com
  * @Date: Create in 20:33 2019/5/12
- * @Description: ForkJoin
+ * @Description: ForkJoin框架   RecursiveTask继承了ForkJoinTask,ForkJoinTask实现了Future
  */
 public class ForkJoinTaskExample extends RecursiveTask<Integer> {
 

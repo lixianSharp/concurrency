@@ -1,6 +1,5 @@
 package com.mmall.concurrency.example.syncContainer;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.mmall.concurrency.ConcurrencyTest;
 import com.mmall.concurrency.annoations.ThreadSafe;
@@ -8,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -18,7 +16,7 @@ import java.util.concurrent.Semaphore;
 /**
  * @Aauthor xianyuan_li@qq.com
  * @Date: Create in 9:35 2019/5/5
- * @Description:
+ * @Description: 创建同步的Set
  */
 @ThreadSafe
 public class CollectionsExample2 {

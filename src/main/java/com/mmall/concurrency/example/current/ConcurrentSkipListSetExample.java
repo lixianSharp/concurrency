@@ -61,10 +61,9 @@ public class ConcurrentSkipListSetExample {
         logger.info("size:{}",set.size());
     }
 
-    //这个方法是线程不安全的写法
+
     private static void update(int i) {
         set.add(i);
-
     }
 
 

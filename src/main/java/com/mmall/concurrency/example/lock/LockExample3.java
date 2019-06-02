@@ -10,10 +10,15 @@ import java.util.TreeMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/**
+ * ReentrantReadWriteLock：读写锁
+ *  可以让线程不安全的TreeMap通过加读锁和写锁的方式变得线程安全
+ */
 @Slf4j
 @ThreadSafe
 public class LockExample3 {
 
+    //TreeMap是线程不安全的
     private final Map<String,Data> map = new TreeMap<String, Data>();
 
     //创建一个读写锁

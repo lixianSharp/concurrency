@@ -13,6 +13,9 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 锁: ReentrantLock
+ */
 @Slf4j
 @ThreadSafe
 public class LockExample2 {

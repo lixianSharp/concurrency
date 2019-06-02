@@ -21,11 +21,11 @@ public class UnsafePublish {
     }
     public static void main(String[] args){
         UnsafePublish unsafePublish = new UnsafePublish();
-        LoggerUtil.logger.info("{}", Arrays.toString(unsafePublish.getStates()));
+        LoggerUtil.logger.info("{}", Arrays.toString(unsafePublish.getStates()));//[a, b, c]
 
-        unsafePublish.getStates()[0] = "d";
+        unsafePublish.getStates()[0] = "d";//states的值有可能被随意修改
 
-        LoggerUtil.logger.info("{}", Arrays.toString(unsafePublish.getStates()));
+        LoggerUtil.logger.info("{}", Arrays.toString(unsafePublish.getStates()));//[d, b, c]
     }
 
 }

@@ -16,7 +16,7 @@ import java.util.Map;
 public class ImmutableExample1 {
     private final static Integer a = 1;
     private final static String b = "2";
-    private final static Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    private final static Map<Integer, Integer> map = new HashMap<Integer, Integer>();//HashMap是线程不安全的
 
     static {
         map.put(1, 2);
@@ -27,7 +27,7 @@ public class ImmutableExample1 {
     public static void main(String[] args) {
 //        a = 2;
 //        b = "3";
-        //使用final修饰的引用类型，不能指向另外一个对象，但是里面的值是可以修改的
+        //使用final修饰的引用类型，不能指向另外一个对象，但是里面的值是可以修改的。也就是引用的类型不允许被修改。
 //        map = new HashMap<>();
 
         map.put(1, 3);
