@@ -12,6 +12,11 @@ import java.util.concurrent.*;
  * @Aauthor xianyuan_li@qq.com
  * @Date: Create in 9:35 2019/5/5
  * @Description: 线程安全的HashMap->ConcurrentHashMap
+ *  CurrentHashMap并不是将每个方法都在同一个锁上同步并使得每次只能有一个线程访问容器，而是使用一种
+ *      力度更细的加锁机制来实现更大程度的共享，这种机制称为 分段锁(Lock Striping).在这种机制下，任意数量
+ *      的读取线程可以并发的访问Map，执行读取操作的线程和执行写入操作的线程可以并发地修改Map。CurrentHashMap
+ *      带来的结果是：在并发访问环境下将实现更高的吞吐量，而在单线程环境中值损失非常小的性能。
+ *
  */
 @ThreadSafe
 public class ConcurrentHashMapExample {

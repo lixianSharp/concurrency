@@ -5,7 +5,6 @@ import com.mmall.concurrency.annoations.ThreadSafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.*;
 
@@ -13,6 +12,8 @@ import java.util.concurrent.*;
  * @Aauthor xianyuan_li@qq.com
  * @Date: Create in 9:35 2019/5/5
  * @Description: 并发容器CopyOnWriteArraySet
+ *      CopyOnWriteArrayList用于替代同步Set，在某些情况下它提供了更好的并发性能，并且在迭代期间不需要
+ *  *        对容器进行加锁或复制.
  */
 @ThreadSafe
 public class CopyOnWriteArraySetExample {
