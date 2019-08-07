@@ -16,6 +16,7 @@ import java.util.concurrent.FutureTask;
  *      FutureTask.get的行为取决于任务的状态。如果任务已经完成，那么get会立即返回结果，否则get将阻塞知道任务
  *          进入完成状态，然后返回结果或者抛出异常。FutureTask将计算结果从执行计算的线程传递到获取这个结果的线程,
  *          而FutureTask的规范确保了这种传递过程能实现结果的安全发布。
+ *
  */
 public class FutureTaskExample {
 
